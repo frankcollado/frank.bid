@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frank Collado - Odontólogo</title>
+    <meta charset="utf-8"> 
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@800" rel="stylesheet">
+    <link href="favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+    <link href="favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-rendering: optimizeLegibility;
+        -webkit-text-size-adjust: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body, html {
+        font-family: 'Lexend';
+        width: 100%;
+        height: 100%;
+        color: #FFF;
+        background: #000;
+        cursor: url('cursor.png') 4 4, auto;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* overflow: hidden; */
+    }
+	*::selection{
+		background: #cf00ff;
+	}
+    body:after {
+        content:'';
+        position: fixed;
+        display: block;
+        z-index: 2;
+        width: 100%;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background: #cf00ff;
+        cursor: none;
+        -webkit-animation: slideOut 600ms 600ms forwards;
+        animation: slideOut 600ms 600ms forwards;
+    }
+	.logo{
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        
+    }
+    h2 {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        max-width: 620px;
+    }
+    h1, h2, a {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-decoration: none;
+        color: #FFF;
+    }
+    time, a.link, a.name {
+        position: fixed;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1;
+    }
+    time {
+        top: 30px;
+        right: 40px;
+        min-width: 140px;
+    }
+    a.name {
+        top: 30px;
+        left: 40px;
+    }
+    a.link {
+        bottom: 35px;
+        right: 40px;
+    }
+    a.link::before {
+        content:'';
+        display: inline-block;
+        vertical-align: bottom;
+        width: 15px;
+        height: 5px;
+        background: #FFF;
+        -webkit-animation: blink 1s linear infinite;
+        animation: blink 1s linear infinite;
+    }
+    a:hover {
+        cursor: inherit;
+        text-decoration: none;
+        opacity: 0.5;
+    }
+    @media(max-width: 760px) {
+        h1, a, a.name {
+            font-size: 26px;
+            left: 20px;
+            right: 20px;
+        }
+        time, a.link, .logo {
+            display: none;
+        }
+    }
+    @-webkit-keyframes slideOut {
+        100% { visibility:hidden; -webkit-transform:translateY(100%); }
+    }
+    @keyframes slideOut {
+        100% { visibility:hidden; transform:translateY(100%); }
+    }
+    @-webkit-keyframes blink {
+        0%, 50% { opacity: 1; }
+        50.01%, 100% { opacity: 0; }
+    }
+    @keyframes blink {
+        0%, 50% { opacity: 1; }
+        50.01%, 100% { opacity: 0; }
+    }
+    </style>
+</head>
+<body>
+    <a href="https://frank.bid" class="name"><h1>Frank Collado</h1></a>
+    <h2>
+		Doctor en Odontología con más de 10 años de experiencia en la atención integral al paciente. 
+		<br><br>
+		Para solicitar información o <del>pedir cita</del>: <a href="https://wa.me/584120506402" rel="nofollow" target="_blank" class="mail">+584120506402</a>
+	</h2>
+	<img src="favicon-32.png" width="64" height="64" class="logo"/>
+   <!--  <a href="https://frank.bid/blog" class="link">Blog</a> -->
+    <time></time>
+    <script>
+    (function Time() {
+        var now = new Date();
+        var H = now.getHours();
+        var M = now.getMinutes();
+        var P = H >= 12 ? 'PM' : 'AM';
+        var D = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][now.getDay()];
+        H = ((H + 11) % 12 + 1);
+        M < 10 && (M = '0' + M);
+        document.querySelector('time').innerHTML = D + ' ' + H + ':' + M + ' ' + P;
+        setTimeout(Time, 1000);
+        })(); 
+    </script>
+</body>
+</html>
